@@ -6,7 +6,7 @@ class Category(models.Model):
     title = models.CharField(max_length=60)
 
 class Post(models.Model):
-    slug = models.CharField(max_length=60)
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=60)
     content = models.TextField(null=True, blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
