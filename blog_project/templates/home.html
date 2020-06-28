@@ -1,4 +1,16 @@
-<!DOCTYPE html>
-<html>
-    
-</html>
+{% extends "base.html" %}
+{% block title %} {{title}} {% endblock %}
+{% block posts %} 
+    {% for post in posts_view%}
+        <div class="card mb-4">
+            <div class="card-body">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <p class="card-text">{{ post.content }}</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+            {{post.created_data}}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
